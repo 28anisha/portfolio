@@ -1,0 +1,596 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>developer portfolio</title>
+    <script src="https://kit.fontawesome.com/95f2b05b44.js" crossorigin="anonymous"></script>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+        }
+
+        nav {
+            display: flex;
+            justify-content: space-around;
+            align-items: center;
+            height: 50px;
+            background-color: rgb(22, 22, 83);
+        }
+
+        nav ul {
+            display: flex;
+            justify-content: center;
+        }
+
+        nav ul li {
+            list-style: none;
+            margin: 0 23px;
+        }
+
+        nav ul li a {
+            text-decoration: none;
+            color: white;
+        }
+
+        nav ul li a:hover {
+            color: rgb(153, 153, 228);
+        }
+
+        .left {
+            font-size: 2rem;
+        }
+
+        .firstsection {
+            display: flex;
+            align-items: center;
+            justify-content: space-around;
+            margin: 50px 0;
+        }
+
+        .firstsection>div {
+            width: 40%;
+        }
+
+        .leftsection {
+            font-size: 3rem;
+
+
+        }
+
+        .rightsection img {
+            width: 65%;
+            margin: 50px 0;
+            border-radius: 50%;
+            cursor: pointer;
+        }
+
+        .purple {
+            color: rgb(151, 75, 223);
+        }
+
+        #element {
+            color: rgb(151, 75, 223);
+        }
+
+        /* ..........about.......... */
+
+        #about {
+            padding: 80px 40px;
+        }
+
+        .row {
+            display: flex;
+            justify-content: space-around;
+            flex-wrap: wrap;
+        }
+
+        .about-col-1 {
+            flex-basis: 35%;
+        }
+
+        .about-col-1 img {
+            width: 80%;
+            border-radius: 20px;
+        }
+
+        .about-col-2 {
+            flex-basis: 60%;
+        }
+
+        .sub-title {
+            font-size: 60px;
+            font-weight: 600;
+            color: rgb(151, 75, 223);
+        }
+
+        .about-text {
+            font-size: 25px;
+            font-style: arial
+        }
+
+        .tab-titles {
+            display: flex;
+            margin: 20px 0 40px;
+        }
+
+        .tab-links {
+            margin-right: 50px;
+            font-size: 20px;
+            font-weight: 500;
+            cursor: pointer;
+            position: relative;
+        }
+
+        .tab-links::after {
+            content: '';
+            width: 0;
+            height: 3px;
+            position: absolute;
+            background: rgb(164, 91, 231);
+            left: 0;
+            bottom: -8px;
+            transition: 0.5s;
+        }
+
+        .tab-links.active-link::after {
+            width: 50%;
+        }
+
+        .tab-contents ul li {
+            list-style: none;
+            margin: 10px 0;
+        }
+
+        .tab-contents ul li span {
+            color: rgb(164, 91, 231);
+            font-size: 18px;
+        }
+
+        .tab-contents {
+            display: none;
+            font-size: 16px;
+        }
+
+        .tab-contents.active-tab {
+            display: block;
+        }
+
+        /* ..............services.............. */
+
+        #skills {
+            padding: 30px 45px;
+
+        }
+
+        .Skill-list {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            grid-gap: 90px;
+            margin-top: 50px;
+            margin-left: 10%;
+            margin-right: 10%;
+        }
+
+        .Skill-list div {
+            background-color: rgb(56, 26, 84);
+            padding: 50px 50px;
+            font-size: 16px;
+            font-weight: 300;
+            border-right: 20px;
+            border-radius: 20px;
+            transition: 0.5s, transform 0.5s;
+        }
+
+        .Skill-list div i {
+            font-size: 50px;
+            margin-bottom: 30px;
+        }
+
+        .Skill-list div h2 {
+            font-size: 30px;
+            font-weight: 500;
+            margin-bottom: 15px;
+        }
+
+        .Skill-list div a {
+            text-decoration: none;
+            color: white;
+            font-size: 12px;
+            margin-top: 20px;
+            display: inline-block;
+
+        }
+
+        .Skill-list div:hover {
+            background-color: rgb(28, 28, 30);
+            transform: translateY(-10px);
+        }
+
+        /* ...........projects........... */
+
+        #projects {
+            padding: 40px 40px;
+        }
+
+        .work-list {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            grid-gap: 40px;
+            margin-top: 50px;
+            margin-left: 15%;
+            margin-right: 15%;
+
+
+        }
+
+        .work {
+            border-radius: 20px;
+            position: relative;
+            overflow: hidden;
+
+        }
+
+        .work img {
+            width: 100%;
+            border-radius: 10px;
+            display: block;
+            height: auto;
+            cursor: pointer;
+            transition: transform 0.5s;
+
+        }
+
+        .work:hover img {
+            transform: scale(1.1);
+
+        }
+
+        .btn {
+            display: block;
+            margin: 50px auto;
+            width: fit-content;
+            border: 1px solid rgb(184, 162, 202);
+            padding: 14px 50px;
+            border-radius: 20px;
+            text-decoration: none;
+            color: white;
+            transition: 0.5s;
+
+        }
+
+        .btn:hover {
+            background: rgb(151, 75, 223);
+            transform: translateY(-5px);
+        }
+
+        /* ..........contact............ */
+
+        .contact-left {
+            flex-basis: 25%;
+        }
+
+        .contact-right {
+            flex-basis: 60%;
+        }
+
+        .contact-left p {
+            margin-top: 30px;
+
+        }
+
+        .contact-left p i {
+            color: rgb(129, 8, 242);
+            font-size: 25px;
+            margin-right: 15px;
+        }
+
+        .social-icons {
+            margin-top: 30px;
+        }
+
+        .social-icons a {
+            text-decoration: none;
+            font-size: 30px;
+            margin-right: 15px;
+            color: white;
+            display: inline-block;
+            transition: 0.5s;
+        }
+
+        .social-icons a:hover {
+            color: rgb(94, 55, 131);
+            transform: translateY(-5px);
+        }
+
+        .btn.btn2 {
+            display: inline-block;
+            background: rgb(80, 37, 121);
+
+        }
+
+        .contact-right form {
+            width: 100%;
+        }
+
+        form input, form textarea {
+            width: 100%;
+            border: 0;
+            outline: none;
+            padding: 15px;
+            margin: 15px 0;
+            font-size: 18px;
+            border-radius: 6px;
+            color: white;
+            background: rgb(27, 27, 53);
+        }
+
+        .form btn2 {
+            padding: 14px 60px;
+            margin-top: 20px;
+            font-size: 18px;
+            cursor: pointer;
+        }
+
+        html {
+            scroll-behavior: smooth;
+        }
+
+        body {
+            background-color: rgb(0, 0, 33);
+            color: white;
+        }
+
+        #msg {
+            color: rgb(33, 118, 40);
+            margin-top: -40px;
+            display: block;
+        }
+        .copyright{
+            width: 100%;
+            font-size: 18px;
+            text-align: center;
+            padding: 20px 0;
+            margin-top: 20px;
+            background: rgb(22, 22, 83);
+        }
+        .copyright i{
+            color:blueviolet
+        }
+
+       
+    </style>
+</head>
+
+<body>
+    <header>
+        <nav>
+            <div class="left">Anisha's Portfolio</div>
+            <div class="right">
+                <ul>
+                    <li><a href="#home">Home </a></li>
+                    <li><a href="#about">About</a></li>
+                    <li><a href="#skills">Skills</a></li>
+                    <li><a href="#projects">Projects</a></li>
+                    <li><a href="#contact">Contact Me</a></li>
+                    <li><a href="#resume">Resume</a></li>
+                </ul>
+            </div>
+        </nav>
+    </header>
+    <main>
+        <div id="home">
+            <section class="firstsection">
+                <div class="leftsection">
+                    Hi, Myself <span class="purple">Anisha Mondal</span> 
+
+                    <div>and I am a passionate </div>
+                    <span id="element"></span>
+
+                </div>
+                <div class="rightsection">
+                    <img src="about.jpg" alt="">
+                </div>
+            </section>
+        </div>
+
+        <!-- ...........about................ -->
+
+        <div id="about">
+            <div class="container">
+                <div class="row">
+                    <div class="about-col-1">
+                        <img src="pg.png" alt="">
+                    </div>
+                    <div class="about-col-2">
+                        <h1 class="sub-title">About Me</h1>
+                        <p class="about-text">Myself, Anisha Mondal I am from Singur.I would describe myself as a passionate and versatile designer with a keen eye for detail and a knack for problem-solving.</p>
+
+
+                        <div class="tab-titles">
+                            <p class="tab-links active-link" onclick="opentab('Skills')">Technical skills</p>
+                            <p class="tab-links" onclick="opentab('Education')">Education</p>
+
+                        </div>
+                        <div class="tab-contents active-tab" id="Skills">
+                            <ul>
+                                <li><span>Proficient in HTML, CSS</span><br>websites designing</li>
+                                <li><span>Python, SQL, Oracle</span><br>Data Analysis & Application developement</li>
+                            </ul>
+                        </div>
+
+                        <div class="tab-contents" id="Education">
+                            <ul>
+                                <li><span>2024</span><br>BCA from BSTM (MAKAUT University)</li>
+                                <li><span>2021</span><br>H.S from Singur GMM Girls High School (W.B.C.H.S.E)</li>
+                                <li><span>2019</span><br>Secondary Education from Singur GMM Girls High School
+                                    (W.B.B.S.E)</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- ..............services............ -->
+        <div id="skills">
+            <div class="container">
+                <h1 class="sub-title">My Skills</h1>
+                <div class="Skill-list">
+                    <div>
+                        <i class="fa-solid fa-code"></i>
+                        <h2>Web Design</h2>
+                        <p>Web designing is the process of planning,conceptualizing and
+                            implimenting the plan for designing a website in a way that is functional and offers a good
+                            user experience. </p>
+                        <a href="#">Learn more</a>
+                    </div>
+                    <div>
+                        <i class="fa-solid fa-crop-simple"></i>
+                        <h2>UI/UX Design</h2>
+                        <p>UI/UX design refers to User Interface (UI) and User Experience (UX) design, which are crucial elements in the creation of digital products such as websites, mobile apps, and software interfaces. UI design focuses on the look and feel of the product, including visual design, while UX design focuses on the overall experience of the user, encompassing usability, accessibility. </p>
+                        <a href="#">Learn more</a>
+                    </div>
+                    <!-- <div>
+                        <i class="fa-brands fa-app-store"></i>
+                        <h2>App Design</h2>
+                        <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Sequi alias repellendus debitis, id
+                            ut molestias eaque cum veritatis! </p>
+                            <a href="#">Learn more</a>
+                    </div> -->
+
+                </div>
+            </div>
+        </div>
+
+        <!-- ..........projects........... -->
+        <div id="projects">
+            <div class="container">
+                <h1 class="sub-title">My Project</h1>
+                <div class="work-list">
+                    <div class="work">
+                        <img src="design1.png" alt="">
+                    </div>
+
+                    <div class="work">
+                        <img src="design2.jpg" alt="">
+                    </div>
+
+                    <div class="work">
+                        <img src="design3.png" alt="">
+                    </div>
+
+                    <div class="work">
+                        <img src="design4.png" alt="">
+                    </div>
+
+                    <div class="work">
+                        <img src="design5.png" alt="">
+                    </div>
+
+                    <div class="work">
+                        <img src="design6.png" alt="">
+                    </div>
+                </div>
+
+                <a href="#" class="btn">See more</a>
+
+
+            </div>
+        </div>
+
+        <!-- ............contact............ -->
+
+        <div id="contact">
+            <div class="container">
+                <div class="row">
+                    <div class="contact-left">
+                        <h1 class="sub-title">Contact Me</h1>
+                        <p><i class="fa-solid fa-paper-plane"></i>anishamondal067@gmail.com</p>
+                        <p><i class="fa-solid fa-phone"></i>8017320015</p>
+                        <div class="social-icons">
+                            <a href=""><i class="fa-brands fa-facebook"></i></a>
+                            <a href=""><i class="fa-brands fa-instagram"></i></a>
+                            <a href=""><i class="fa-brands fa-linkedin"></i></a>
+                        </div>
+
+                       <div id="resume">
+                        <a href="Anisha Mondal CV.pdf" download class="btn btn2">Download Resume</a>
+                    </div> 
+                    </div>
+
+                    <div class="contact-right">
+                        <form name="submit-to-google-sheet">
+                            <input type="text" name="Name" placeholder="Your Name" required>
+                            <input type="email" name="Email" placeholder="Your Email" required>
+                            <textarea name="Message" rows="6" placeholder="Your Message"></textarea>
+                            <button type="submit" class="btn btn2">Submit</button>
+                        </form>
+                        <span id="msg"></span>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="copyright">
+            <p>Copyright <i class="fa-solid fa-heart"></i> Anisha's Portfolio</p>
+        </div>
+
+    </main>
+
+
+    <script>
+        var tablinks = document.getElementsByClassName("tab-links");
+        var tabcontents = document.getElementsByClassName("tab-contents");
+
+        function opentab(tabname) {
+            for (tablink of tablinks) {
+                tablink.classList.remove("active-link");
+            }
+
+            for (tabcontent of tabcontents) {
+                tabcontent.classList.remove("active-tab");
+            }
+            event.currentTarget.classList.add('active-link');
+            document.getElementById(tabname).classList.add("active-tab");
+        }
+    </script>
+
+
+
+
+
+
+    <script src="https://unpkg.com/typed.js@2.1.0/dist/typed.umd.js"></script>
+    <script src="https://unpkg.com/typed.js@2.1.0/dist/typed.umd.js"></script>
+
+    <!-- Setup and start animation! -->
+    <script>
+        var typed = new Typed('#element', {
+            strings: ['Web Developer', ' Web Designer.'],
+            typeSpeed: 50,
+        });
+    </script>
+    <script>
+        const scriptURL = 'https://script.google.com/macros/s/AKfycbyP2TmSFzmbEj_ZcQpv_6-ZMkxPfaNvu9ZH9P0tKOfZe0JR6vbJJH5FF5umMOlm7go/exec'
+        const form = document.forms['submit-to-google-sheet']
+        const msg = document.getElementById("msg")
+
+        form.addEventListener('submit', e => {
+            e.preventDefault()
+            fetch(scriptURL, { method: 'POST', body: new FormData(form) })
+                .then(response => {
+                    msg.innerHTML = "Message Sent Successfully"
+                    setTimeout(function () {
+                        msg.innerHTML = ""
+                    }, 5000)
+                    form.reset()
+                })
+                .catch(error => console.error('Error!', error.message))
+        })
+    </script>
+
+</body>
+
+</html>
